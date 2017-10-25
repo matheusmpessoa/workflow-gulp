@@ -1,6 +1,5 @@
 // breakpoints map
-$breakpoints: (xs: 32rem, sm: 48rem, md: 72rem, lg: 96rem, xl: 102rem, xx: 120rem);
-
+$breakpoints: (xs: 0, sm: 768px, md: 992px, lg: 1170px);
 // media query mixin
 @mixin break($size) {
     @media (min-width: map-get($breakpoints, $size)) {
@@ -10,15 +9,13 @@ $breakpoints: (xs: 32rem, sm: 48rem, md: 72rem, lg: 96rem, xl: 102rem, xx: 120re
 
 // total de colunas
 $columns: 12;
-
 // loop dos breakpoints
 @each $measure, $value in $breakpoints {
     @for $i from 1 through $columns {
         .col-#{$measure}-#{$i} {
-            width: 100%;
             float: left;
-            // padding-right: 15px;
-            // padding-left: 15px;
+            padding-right: 15px;
+            padding-left: 15px;
 
             @include break($measure) {
                 width: #{$i / $columns * 100%};
@@ -31,10 +28,45 @@ $columns: 12;
 .grid {
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: 1rem;
 }
+
 // linha do grid
 .row {
     margin-left: -15px;
     margin-right: -15px;
+
+    &:before {
+        content: "";
+        display: table;
+        width: 100%;
+        clear: both;
+    }
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+// Hidden
+@media (max-width:767px) {
+    .hidden-xs {
+        display: none !important;
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+@media (min-width:992px) and (max-width:1199px) {
+    .hidden-md {
+        display: none !important;
+    }
+}
+@media (min-width:1200px) {
+    .hidden-lg {
+        display: none !important;
+    }
 }

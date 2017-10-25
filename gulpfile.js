@@ -17,11 +17,11 @@ var files = [
 
 gulp.task('browser-sync', function () {
 	//watch files
-	
+
 	//initialize browsersync
 	browserSync.init(files, {
 		//browsersync with a php server
-		proxy: "192.168.1.66/matheus/workflow-gulp",
+		proxy: "192.168.1.71/matheus/workflow-gulp",
 		notify: false
 	});
 });
@@ -60,7 +60,6 @@ gulp.task('scripts', function () {
 		.pipe(rename('app.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('./assets/dist/js/'))
-		
 
 	gulp.src('./assets/dev/js/plugins.min.js')
 		.pipe(plumber({

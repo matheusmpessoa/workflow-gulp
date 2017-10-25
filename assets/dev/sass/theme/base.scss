@@ -1,15 +1,19 @@
+// Box sizing
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+// Container
 .container {
      padding: 0px 15px;
      margin: 0px auto;
-     width: 1220px;
+     max-width: 1220px;
      position: relative;
 
     // Small devices (landscape phones, less than 768px)
@@ -26,4 +30,15 @@
     @media (max-width: 1199px) {
 
     }
+}
+
+// Propriedades gerais
+a {
+    text-decoration-line: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display:block;
 }

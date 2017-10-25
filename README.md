@@ -17,12 +17,20 @@ npm install --save-dev jshint gulp-jshint
 ```
 
 ## Execução
+Para executar todo o arquivo gulp e suas tarefas
 ```js
 gulp
 ```
 
+Para executar apenas determinada tarefa
+```js
+gulp images
+```
+
+
+
 ## Configurações
-Caso queira usar o browser sync que está configurado no *gulpfile* basta inserir seu endereço de localhost
+Caso queira usar o browser sync que está configurado no *gulpfile* basta inserir seu endereço de localhost na task *browser-sync*
 
 
 ## Exemplos
